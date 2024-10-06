@@ -1,0 +1,204 @@
+:root {
+    /* Font Variables */
+    --primary-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Raleway', sans-serif;
+
+    /* Color Variables for Dark Mode */
+    --dark-bg: #160e1e;
+    --dark-primary: #4b2b5e;
+    --dark-secondary: #3a2a4d;
+    --dark-text: #f4f4f4;
+    --dark-accent: #2e1f3f;
+    --dark-button-bg: #4b2b5e;
+    --dark-button-hover: #654481;
+    --dark-shadow: rgba(0, 0, 0, 0.3);
+    --dark-shadow-hover: rgba(0, 0, 0, 0.4);
+
+    /* Color Variables for Light Mode */
+    --light-bg: #ebdfff;
+    --light-primary: #d6b3ff;
+    --light-secondary: #ddd1ff;
+    --light-text: #333;
+    --light-accent: #e3d2ff;
+    --light-button-bg: #d6b3ff;
+    --light-button-hover: #c49bff;
+    --light-shadow: rgba(0, 0, 0, 0.15);
+    --light-shadow-hover: rgba(0, 0, 0, 0.2);
+}
+
+/* General Styling */
+body {
+    font-family: var(--primary-font);
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--dark-accent); 
+    box-shadow: 0 4px 15px var(--dark-shadow); 
+    position: relative;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0px 20px;
+    box-shadow: 0 4px 10px var(--dark-shadow); 
+}
+
+.name {
+    font-family: var(--secondary-font);
+    font-size: 24px;
+    color: var(--dark-text);
+    transition: color 0.5s ease;
+}
+
+/* Dark Mode Toggle Button */
+#toggleButton {
+    background-color: var(--dark-button-bg);
+    color: var(--dark-text);
+    border: none;
+    padding: 10px 20px;
+    margin: 0px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 15px var(--dark-shadow); 
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#toggleButton:hover {
+    box-shadow: 0 6px 18px var(--dark-shadow-hover); 
+}
+
+.light-mode #toggleButton {
+    background-color: var(--light-button-bg); 
+    color: var(--light-text);
+    box-shadow: 0 4px 15px var(--light-shadow); 
+}
+
+.light-mode #toggleButton:hover {
+    box-shadow: 0 6px 18px var(--light-shadow-hover);
+}
+
+/* Projects Section */
+.projects {
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+    transition: color 0.5s ease;
+}
+
+.intro{
+padding-bottom: 30px;
+}
+
+.intro p{
+    text-align: left;
+}
+
+.project {
+    background-color: var(--dark-secondary);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px var(--dark-shadow); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-name {
+    font-size: 20px;
+    transition: color 0.5s ease;
+}
+
+.demo-btn {
+    padding: 10px 20px;
+    background-color: var(--dark-button-bg); 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px var(--dark-shadow); 
+    font-family: var(--primary-font);
+    font-size: 14px;
+}
+
+.demo-btn:hover {
+    background-color: var(--dark-button-hover);
+    box-shadow: 0 6px 18px var(--dark-shadow-hover); 
+}
+
+/* Light Mode Styling */
+.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+.light-mode header {
+    background-color: var(--light-accent); 
+    box-shadow: 0 4px 15px var(--light-shadow);
+}
+
+.light-mode .name {
+    color: var(--light-text);
+}
+
+.light-mode .project {
+    background-color: var(--light-secondary); 
+}
+
+.light-mode .demo-btn {
+    background-color: var(--light-button-bg);
+    color: var(--light-text);
+    box-shadow: 0 4px 15px var(--light-shadow);
+}
+
+.light-mode .demo-btn:hover {
+    background-color: var(--light-button-hover);
+    box-shadow: 0 6px 18px var(--light-shadow-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+    }
+
+    .demo-btn {
+        margin-top: 20px;
+        width: 100%;
+    }
+    h1{
+      margin-bottom: 30px;  
+    }
+}
